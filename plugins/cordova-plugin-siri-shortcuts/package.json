@@ -1,0 +1,56 @@
+{
+  "_from": "cordova-plugin-siri-shortcuts",
+  "_id": "cordova-plugin-siri-shortcuts@0.0.9",
+  "_inBundle": false,
+  "_integrity": "sha512-IMhpwZtEl7sF4cvmD2aXuJYezA0vRGDQgrCy/e79XEQpLHQpjHRzRGu+//lrrjaP4CdPRSdfzliJoyuHjcPRYg==",
+  "_location": "/cordova-plugin-siri-shortcuts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-siri-shortcuts",
+    "name": "cordova-plugin-siri-shortcuts",
+    "escapedName": "cordova-plugin-siri-shortcuts",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-siri-shortcuts/-/cordova-plugin-siri-shortcuts-0.0.9.tgz",
+  "_shasum": "bb127087efeead10fa2a6133529030677ee51532",
+  "_spec": "cordova-plugin-siri-shortcuts",
+  "_where": "/Users/administrator/Desktop/Himanshu Prajapati/Ajman",
+  "author": {
+    "name": "Bart Wesselink"
+  },
+  "bugs": {
+    "url": "https://github.com/bartwesselink/cordova-plugin-siri-shortcuts/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-siri-shortcuts",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "This plugin enables the use of Siri shortcuts in Cordova.",
+  "homepage": "https://github.com/bartwesselink/cordova-plugin-siri-shortcuts#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "siri",
+    "ios",
+    "shortcuts"
+  ],
+  "license": "ISC",
+  "name": "cordova-plugin-siri-shortcuts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartwesselink/cordova-plugin-siri-shortcuts.git"
+  },
+  "version": "0.0.9"
+}

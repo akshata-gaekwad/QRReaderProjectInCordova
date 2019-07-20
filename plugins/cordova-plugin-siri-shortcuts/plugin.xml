@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-siri-shortcuts" version="0.0.9" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SiriShortcuts</name>
+    <js-module name="SiriVoiceKit" src="www/SiriShortcuts.js">
+        <clobbers target="cordova.plugins.SiriShortcuts" />
+    </js-module>
+
+    <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+
+    <platform name="ios">
+	
+        <config-file target="config.xml" parent="/*">
+            <feature name="SiriShortcuts">
+                <param name="ios-package" value="SiriShortcuts" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSUserActivityTypes">
+            <array>
+                <string>$PACKAGE_NAME.shortcut</string>
+            </array>
+        </config-file>
+        <header-file src="src/ios/SiriShortcuts-Bridging-Header.h"/>
+        <header-file src="src/ios/AppDelegate+SiriShortcuts.h" />
+
+        <source-file src="src/ios/SiriShortcuts.swift" />
+        <!-- Siri  -->
+        <source-file src="src/ios/AppDelegate+SiriShortcuts.m" />
+        <source-file src="src/ios/ActivityDataHolder.swift" />
+
+
+<!-- SVProgress HUD  -->
+
+<source-file src="src/ios/SVRadialGradientLayer.h" />
+<source-file src="src/ios/SVRadialGradientLayer.m" />
+<source-file src="src/ios/SVProgressHUD.h" />
+<source-file src="src/ios/SVProgressHUD.m" />
+<source-file src="src/ios/SVProgressHUD-Prefix.pch" />
+<source-file src="src/ios/SVProgressAnimatedView.h" />
+<source-file src="src/ios/SVProgressAnimatedView.m" />
+<source-file src="src/ios/SVIndefiniteAnimatedView.h" />
+<source-file src="src/ios/SVIndefiniteAnimatedView.m" />
+<source-file src="src/ios/SVProgressHUD.bundle" />
+
+    </platform>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SiriShortcuts">
+        <param name="android-package" value="com.example.qrreader.SiriShortcuts"/>
+		<param name="android-package" value="com.example.qrreader.QRGenerateActivity"/>
+      </feature>
+    </config-file>
+
+
+    <!-- add permissions in AndroidManifest.xml file-->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    </config-file>
+
+	<framework src = "com.google.zxing:core:2.2"/>
+    <source-file src="src/android/com/example/qrreader/SiriShortcuts.java" target-dir="src/cordova/qrreader" />
+	<source-file src="src/android/com/example/qrreader/QRGenerateActivity.java" target-dir="src/cordova/qrreader" />
+	
+	 <!-- Layout Files -->	
+	 <source-file src="src/android/res/layout/activity_qr_generate.xml" target-dir="res/layout" /> 
+	 
+	 <!-- Drawable -->	
+	 <source-file src="src/android/res/drawable/maruhan_icon_32x32.png" target-dir="src/main/res/drawable" />
+	 <source-file src="src/android/res/drawable/colors.xml" target-dir="src/main/res/drawable" />
+  </platform>
+
+</plugin>
