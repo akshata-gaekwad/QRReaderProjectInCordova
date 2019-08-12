@@ -9,15 +9,13 @@ package com.example.qrreader;
 
 public final class R {
   public static final class drawable {
-    public static final int colors=0x7f010000;
-    public static final int maruhan_icon_32x32=0x7f010001;
-    public static final int screen=0x7f010002;
+    public static final int maruhan_icon_32x32=0x7f010000;
+    public static final int screen=0x7f010001;
   }
   public static final class id {
     public static final int activity_main=0x7f020000;
-    public static final int buttonGenerate=0x7f020001;
-    public static final int editBox=0x7f020002;
-    public static final int qrImage=0x7f020003;
+    public static final int editText=0x7f020001;
+    public static final int imageView=0x7f020002;
   }
   public static final class layout {
     public static final int activity_qr_generate=0x7f030000;

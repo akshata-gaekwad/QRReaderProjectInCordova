@@ -4,12 +4,12 @@
         "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon.png"
     },
     {
-        "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi_screen.png.flat",
-        "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\drawable-land-ldpi\\screen.png"
-    },
-    {
         "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi_screen.png.flat",
         "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\drawable-land-xhdpi\\screen.png"
+    },
+    {
+        "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi_screen.png.flat",
+        "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\drawable-land-ldpi\\screen.png"
     },
     {
         "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon.png.flat",
@@ -46,10 +46,6 @@
     {
         "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi_screen.png.flat",
         "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\drawable-land-mdpi\\screen.png"
-    },
-    {
-        "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors.xml.flat",
-        "source": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\src\\main\\res\\drawable\\colors.xml"
     },
     {
         "merged": "D:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",

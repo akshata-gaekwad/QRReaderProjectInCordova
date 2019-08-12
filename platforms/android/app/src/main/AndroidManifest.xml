@@ -9,7 +9,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:label="QRGenerateActivity" android:name="com.example.qrreader.QRGenerateActivity" />
     </application>
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

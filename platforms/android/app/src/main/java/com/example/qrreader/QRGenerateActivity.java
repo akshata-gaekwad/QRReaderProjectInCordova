@@ -1,6 +1,7 @@
 package com.example.qrreader;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -9,11 +10,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -25,19 +24,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import static android.graphics.Color.BLACK;
 import static android.graphics.Color.WHITE;
 import android.util.Base64;
-import android.graphics.drawable.Drawable;
-import org.apache.cordova.PluginResult;
+
 
 
 public class QRGenerateActivity extends Activity{
 	
 	
-	private String TAG = "QRGenerateActivity";
 	 private ImageView qrImage;
-    private EditText editBox;
-    private Button buttonGenerate;
+     private Button buttonGenerate;
+     
     String download = "RXcW/8Nco6/kWo3L0rdA9j8YJcEMsh4blCFJL3L8nmu0+cMlnmCE7ds55TwDvH40paOUHkueJIh2uEupq4tEIO4aB4+KumUTnwInp8XyIpyoF2ig/x3P8TpQvPfts6Tpw2q2zKTepoXkjcxtMhbv16mKTArQWOCKNXQ+Z6u6f2A=\n" +
             "~008159500001~23100007~Somphasith Mom~10~~Test ~SELF\n";
 
@@ -57,20 +55,21 @@ public class QRGenerateActivity extends Activity{
         super.onCreate(savedInstanceState);
 		
 		setContentView(getResources().getIdentifier("activity_qr_generate", "layout", getPackageName()));
-		final Button buttonGenerate = (Button) findViewById(getResources().getIdentifier("buttonGenerate", "id", getPackageName()));
-		final ImageView qrImage = (ImageView) findViewById(getResources().getIdentifier("qrImage", "id", getPackageName()));	
-		final EditText editBox = (EditText) findViewById(getResources().getIdentifier("editBox", "id", getPackageName())); 
+		//final Button buttonGenerate = (Button) findViewById(getResources().getIdentifier("buttonGenerate", "id", getPackageName()));
+		qrImage = (ImageView) findViewById(getResources().getIdentifier("imageView", "id", getPackageName()));
+		final TextView editBox = (TextView) findViewById(getResources().getIdentifier("editText", "id", getPackageName()));
 		
-		 buttonGenerate.setOnClickListener(new View.OnClickListener() {
+	/*	 buttonGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { */
                 try{
                     int width = 300;
                     int height = 300;
                     int smallestDimension = width < height ? width : height;
 
-                    String qrCodeData = editBox.getText().toString();
-					editBox.setText(john);
+                    Bundle extras = getIntent().getExtras();
+                    String qrCodeData = String.valueOf(extras.getString("STRING_TO_ENCRYPT"));
+					editBox.setText(qrCodeData);
                     String charSet = "UTF-8";
                     Map<EncodeHintType, ErrorCorrectionLevel> hintMap = new HashMap<EncodeHintType, ErrorCorrectionLevel>();
                     hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
@@ -80,8 +79,8 @@ public class QRGenerateActivity extends Activity{
                     e.printStackTrace();
                     Log.e("QRGenerate", e.getMessage());
                 }
-            }
-        });
+         //   }
+      //  });
     }
 	
 	
@@ -103,7 +102,7 @@ public class QRGenerateActivity extends Activity{
                     //pixels[offset + x] = matrix.get(x, y) ? BLACK : WHITE;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         pixels[offset + x] = matrix.get(x, y) ?
-						getResources().getIdentifier("black", "colors", getPackageName()) :WHITE;
+						BLACK :WHITE;
                                // ResourcesCompat.getColor(getResources(),R.color.black,null) :WHITE;
                         //getResources().getColor(R.color.black, null) :WHITE;
                     }
@@ -121,8 +120,12 @@ public class QRGenerateActivity extends Activity{
             qrImage.setImageBitmap(mergeBitmaps(overlay,bitmap));
             saveToInternalStorage(mergeBitmaps(overlay, bitmap));
 			
-			 String base64 = bitmapToBase64(mergeBitmaps(overlay, bitmap));
-			// sendPluginResult(new PluginResult(PluginResult.Status.OK, base64));
+             String base64 = bitmapToBase64(mergeBitmaps(overlay, bitmap));
+            
+             Intent intent = new Intent();
+             intent.putExtra("base64", base64);
+             setResult(RESULT_OK, intent);
+             finish();
            // Toast.makeText(Main4Activity.this, base64, Toast.LENGTH_LONG).show();
 
         }catch (Exception er){

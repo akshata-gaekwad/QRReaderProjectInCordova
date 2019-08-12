@@ -14,8 +14,8 @@ var exec = require('cordova/exec');
  * @param {function(error) : void} error Function to call upon unsuccessful donation, for example if the user has an iOS version < 12.0
  * @return void
  */
-exports.donate = function (options, success, error) {
-    exec(success, error, 'SiriShortcuts', 'donate', [options.persistentIdentifier, options.title, options.suggestedInvocationPhrase, options.userInfo, options.isEligibleForSearch, options.isEligibleForPrediction]);
+exports.readqrcode = function ( success, error) {
+    exec(success, error, 'SiriShortcuts', 'readqrcode');
 };
 
 /**
@@ -29,12 +29,13 @@ exports.donate = function (options, success, error) {
  * @param {function(error) : void} error Function to call upon unsuccessful donation, for example if the user has an iOS version < 12.0
  * @return void
  */
-/**exports.qrGenerate = function (options, success, error) {
-    exec(success, error, 'SiriShortcuts', 'qrGenerate', [options.persistentIdentifier, options.title, options.suggestedInvocationPhrase, options.userInfo, options.isEligibleForSearch, options.isEligibleForPrediction]);
-}; **/
 
 exports.present = function (options, success, error) {
     exec(success, error, 'SiriShortcuts', 'present', [options.persistentIdentifier, options.title, options.suggestedInvocationPhrase, options.userInfo, options.isEligibleForSearch, options.isEligibleForPrediction]);
+};
+
+exports.generateqrcode = function (options, success, error) {
+    exec(success, error, 'SiriShortcuts', 'generateqrcode', [options.encryptedstring]);
 };
 
 /**

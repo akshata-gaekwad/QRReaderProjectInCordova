@@ -29,20 +29,22 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 		
-	/*	cordova.plugins.SiriShortcuts.qrGenerate({
-            persistentIdentifier: 'contact-us',
-            title: 'Open Contact',
-            suggestedInvocationPhrase: 'Open Contact',
-            userInfo: { username: 'username' }
-        }, function(data){ alert(data) }, function(error){console.log(error);}); */
 		
-		cordova.plugins.SiriShortcuts.present({
+         // cordova.plugins.SiriShortcuts.readqrcode(function(data){ alert(data) }, function(error){console.log(error);});
+
+        /*cordova.plugins.SiriShortcuts.present({
             persistentIdentifier: 'contact-us',
             title: 'Open Contact',
             suggestedInvocationPhrase: 'Open Contact',
             userInfo: { username: 'username' }
-        }, function(data){ alert(data) }, function(error){console.log(error);});
+        }, function(data){ alert(data) }, function(error){console.log(error);});*/
 
+
+
+        cordova.plugins.SiriShortcuts.generateqrcode({
+            encryptedstring : "encryptedstring"
+            }, function(success){alert(success) }, function(error){console.log(error);});
+        
     },
 
     // Update DOM on a Received Event

@@ -9,7 +9,7 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"SiriShortcuts\"><param name=\"android-package\" value=\"com.example.qrreader.SiriShortcuts\" /><param name=\"android-package\" value=\"com.example.qrreader.QRGenerateActivity\" /></feature>",
+              "xml": "<feature name=\"SiriShortcuts\"><param name=\"android-package\" value=\"com.example.qrreader.SiriShortcuts\" /></feature>",
               "count": 1
             },
             {
@@ -24,6 +24,16 @@
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 1
+            }
+          ],
+          "/manifest/application": [
+            {
+              "xml": "<activity android:label=\"QRGenerateActivity\" android:name=\"com.example.qrreader.QRGenerateActivity\" />",
               "count": 1
             }
           ]

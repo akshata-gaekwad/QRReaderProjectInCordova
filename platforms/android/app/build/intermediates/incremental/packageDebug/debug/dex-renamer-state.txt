@@ -1,4 +1,4 @@
-#Sat Jul 20 20:36:52 IST 2019
+#Mon Aug 12 19:03:51 IST 2019
 base.0=D\:\\QRReaderProjectInCordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

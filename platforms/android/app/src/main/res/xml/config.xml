@@ -2,7 +2,6 @@
 <widget id="com.example.qrreader" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="SiriShortcuts">
         <param name="android-package" value="com.example.qrreader.SiriShortcuts" />
-        <param name="android-package" value="com.example.qrreader.QRGenerateActivity" />
     </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />

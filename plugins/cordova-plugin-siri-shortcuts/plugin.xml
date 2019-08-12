@@ -48,7 +48,6 @@
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="SiriShortcuts">
         <param name="android-package" value="com.example.qrreader.SiriShortcuts"/>
-		<param name="android-package" value="com.example.qrreader.QRGenerateActivity"/>
       </feature>
     </config-file>
 
@@ -56,19 +55,23 @@
     <!-- add permissions in AndroidManifest.xml file-->
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     </config-file>
 
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	  <activity android:label="QRGenerateActivity" android:name="com.example.qrreader.QRGenerateActivity"></activity>
+	</config-file>
+
 	<framework src = "com.google.zxing:core:2.2"/>
-    <source-file src="src/android/com/example/qrreader/SiriShortcuts.java" target-dir="src/cordova/qrreader" />
-	<source-file src="src/android/com/example/qrreader/QRGenerateActivity.java" target-dir="src/cordova/qrreader" />
+    <source-file src="src/android/com/example/qrreader/SiriShortcuts.java" target-dir="src/com/example/qrreader" />
+	<source-file src="src/android/com/example/qrreader/QRGenerateActivity.java" target-dir="src/com/example/qrreader" />
 	
 	 <!-- Layout Files -->	
 	 <source-file src="src/android/res/layout/activity_qr_generate.xml" target-dir="res/layout" /> 
 	 
-	 <!-- Drawable -->	
+	 <!-- Drawable  -->	
 	 <source-file src="src/android/res/drawable/maruhan_icon_32x32.png" target-dir="src/main/res/drawable" />
-	 <source-file src="src/android/res/drawable/colors.xml" target-dir="src/main/res/drawable" />
   </platform>
 
 </plugin>
